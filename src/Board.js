@@ -3,31 +3,12 @@ import Cell from "./Cell";
 import './Board.css';
 
 
-/** Game board of Lights out.
- *
- * Properties:
- *
- * - nrows: number of rows of board
- * - ncols: number of cols of board
- * - chanceLightStartsOn: float, chance any cell is lit at start of game
- *
- * State:
- *
- * - hasWon: boolean, true when board is all off
- * - board: array-of-arrays of true/false
- *
- *    For this board:
- *       .  .  .
- *       O  O  .     (where . is off, and O is on)
- *       .  .  .
- *
- *    This would be: [[f, f, f], [t, t, f], [f, f, f]]
- *
- *  This should render an HTML table of individual <Cell /> components.
- *
- *  This doesn't handle any clicks --- clicks are on individual cells
- *
- **/
+/*    For the board:
+*       .  .  .
+*       O  O  .     (where . is off, and O is on)
+*       .  .  .
+*
+*    This would be: [[f, f, f], [t, t, f], [f, f, f]] */
 
 class Board extends Component {
   static defaultProps = {
@@ -38,13 +19,17 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isWon: 0,
-      board: this.createBoard()
+      hasWon: false,
+      board: this.createBoard(),
+      gaveUp: false,
+      rulesOn: false
     }
     this.flipCellsAround = this.flipCellsAround.bind(this);
     this.playAgain = this.playAgain.bind(this);
     this.handleRandomMoves = this.handleRandomMoves.bind(this);
     this.randomMove = this.randomMove.bind(this);
+    this.showRules = this.showRules.bind(this);
+    this.showSoltn = this.showSoltn.bind(this);
 
   }
 
@@ -98,9 +83,7 @@ class Board extends Component {
     flipCell(y,x+1);   //right one
     flipCell(y, x-1);    //left one
 
-    // win when every cell is turned off
-    // TODO: determine is the game has been won
-    
+    // win when every cell is turned off   
     let hasWon = board.every(row => row.every(cell => !cell));
     this.setState({board, hasWon: hasWon});
   }
@@ -110,17 +93,30 @@ class Board extends Component {
     this.setState({ hasWon: false });
   }
 
+  giveUp() {
+    this.setState({ gaveUp: true });
+  }
+
+  showRules() {
+    this.state.rulesOn ? this.setState({ rulesOn: 0 }) : this.setState({ rulesOn: 1 })
+  }
+
+  showSoltn() {
+    this.state.gaveUp ? this.setState({ gaveUp: false }) : this.setState({ gaveUp: true })
+  }
+
   componentDidMount() {
     this.handleRandomMoves();
+    this.setState({hasWon: true}); //delete this!!!
   }
 
   render() {
     if (this.state.hasWon){
       return (
         <div>
-          <h1>You win!</h1>
-          <button className="Board-btn" onClick={this.playAgain}>
-            PLAY AGAIN ?
+          <h1 className="neon-blue win">You <span className="neon-pink win">win!</span></h1>
+          <button className="Board-btn xenon" onClick={this.playAgain}>
+            PLAY AGAIN 
           </button>
         </div>
       );
@@ -140,25 +136,51 @@ class Board extends Component {
       }
       table.push(<tr key={y}>{row}</tr>)
     }
+    
+    let giveUpBtn;
+    let rulesBtn;
+    this.state.rulesOn ? 
+               rulesBtn = 
+                 <div className='rulesBtn'>
+                   <button onClick={this.showRules} className='giveUp Board-btn'>hide&nbsp;&nbsp;&nbsp; rules</button>
+                   <p className='Board-rules'>LightsOut is a puzzle where you are given a grid of cells, or lights, with some dark and others light. You must turn them all off by clicking on the cells. Each click toggles that cell and each of its immediate neighbors.
+                  </p>
+                 </div> 
+                : rulesBtn = <button onClick={this.showRules} className='giveUp Board-btn'>rules</button>
+    if (!this.state.gaveUp) {
+      giveUpBtn = <button onClick={this.showSoltn} className='giveUp Board-btn'>how &nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp; win</button>
+    } else {
+      giveUpBtn = <div className='giveUpbtn'>
+        <button onClick={this.showSoltn} className='giveUp Board-btn'>back &nbsp;&nbsp;to&nbsp;&nbsp; game</button> 
+        <p className='Board-rules'>1) The easiest way to solve LightsOut puzzles is to use a method called 'Chase The Lights'. Starting with the second row, click on every cell that has a light on in the row above it. This will turn off all the lights in that row. Continue with each successive row until the only remaining lights are in the final row.<br/><br/>2) Now that you only have lights on in the final row, use the lookup table below and find the pattern of lights. This will tell you which lights to click in the top row. When you chase the lights this time, the bottom row will end up dark, just like the rest of the puzzle.
+        </p>
+        <table className="container Board-rules pattern">
+          <tbody><tr><th>Bottom Row Lights</th><th>Top Row Clicks</th></tr>
+            <tr><td>..***</td><td>...+.</td></tr>
+            <tr><td>.*.*.</td><td>.+..+</td></tr>
+            <tr><td>.**.*</td><td>+....</td></tr>
+            <tr><td>*...*</td><td>...++</td></tr>
+            <tr><td>*.**.</td><td>....+</td></tr>
+            <tr><td>**.**</td><td>..+..</td></tr>
+            <tr><td>***..</td><td>.+...</td></tr>
+          </tbody></table>
+      </div>
+    }
 
       return (
-        <table className="Board">
-          <tbody>
-            {table}
-          </tbody>
-        </table>
+        <div className='container'>
+          <div className='Board-title'>
+            <div className="neon-blue">Lights </div>
+            <div className="neon-pink"> Out</div>
+          </div>
+            { !this.state.gaveUp ? (<table className="Board"><tbody>{table}</tbody></table>): null }
+        <div className='container'>
+            {rulesBtn}
+            {giveUpBtn}
+        </div>
+        </div>
       );
     
-    
-
-    // TODO
-    
-
-
-    // make table board
-  
-
-    // TODO
   }
 }
 

@@ -1,3 +1,118 @@
 .Board {
   margin: 0 auto;
+  box-shadow: inset 1px 1px 1px black, 0 0 25px #84AE7F, 0 0 5px #239D16;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #212121;
+}
+
+.Board-title {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 1.3rem;
+  margin-top:auto;
+}
+
+
+.Board-rules {
+ font-size: 1.3rem;
+ text-align: justify;
+ /* padding-left: 20%;
+ padding-right: 20%; */
+ color: #84AE7F;
+ text-shadow:  0 0 25px #84AE7F, 0 0 5px #239D16;
+ width: 50rem;
+}
+
+.pattern td, th {
+  border: 1px solid #84AE7F;
+}
+
+
+.Board-btn {
+  width: 20rem;
+  height: 3rem;
+  font-size: 2rem;
+  background-color: #42354B;
+  border-radius: 4px;
+  box-shadow:  0 0 25px #84AE7F, 0 0 5px #239D16;
+  border-width: 0;
+  color: #84AE7F;
+  font-family: 'Monoton', cursive;
+  
+}
+
+.giveUp {
+  margin: 1.5rem;;
+}
+
+.Board-btn:hover {
+  cursor: pointer;
+  background-color: #212121;
+}
+
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.neon-pink {
+  font-family: neon;
+  color: #FB4264;
+  font-size: 5rem;
+  /* line-height: 9vw; */
+  text-shadow: 0 0 3vw #F40A35;
+  animation: neon-ink 1s ease infinite;
+  -moz-animation: neon-pink 1s ease infinite;
+  -webkit-animation: neon-pink 1s ease infinite;
+}
+
+.neon-blue {
+  font-family: neon;
+  color: #426DFB;
+  font-size: 5.5rem;
+  text-shadow: 0 0 3vw #2356FF;
+  animation: neon-blue 2s linear infinite;
+  -moz-animation: neon-blue 2s linear infinite;
+  -webkit-animation: neon-blue 2s linear infinite;
+  -o-animation: neon-blue 2s linear infinite;
+}
+.win {
+  font-size: 10rem;
+}
+
+
+
+@keyframes neon-pink {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #b149d2, 0 0 3vw #b149d2, 0 0 10vw #b149d2, 0 0 10vw #b149d2, 0 0 .4vw #d9259a, .5vw .5vw .1vw #d32389;
+    color: #d9259a;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #6a138a, 0 0 1.5vw #6a138a, 0 0 5vw #6a138a, 0 0 5vw #6a138a, 0 0 .2vw #6a138a, .5vw .5vw .1vw #a21869;
+    color: #d32389;
+  }
+}
+
+@keyframes neon-blue {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #588aff, 0 0 3vw #588aff, 0 0 10vw #588aff, 0 0 10vw #588aff, 0 0 .4vw #cc4cff, .5vw .5vw .1vw #8459ff;
+    color: #C44DF3;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #31277E, 0 0 1.5vw #31277E, 0 0 5vw #31277E, 0 0 5vw #31277E, 0 0 .2vw #31277E, .5vw .5vw .1vw #5021fb;
+    color: #8459ff;
+  }
 }
