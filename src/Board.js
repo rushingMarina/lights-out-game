@@ -107,7 +107,7 @@ class Board extends Component {
 
   componentDidMount() {
     this.handleRandomMoves();
-    this.setState({hasWon: true}); //delete this!!!
+    //this.setState({hasWon: true}); 
   }
 
   render() {
