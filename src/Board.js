@@ -22,7 +22,8 @@ class Board extends Component {
       hasWon: false,
       board: this.createBoard(),
       gaveUp: false,
-      rulesOn: false
+      rulesOn: false,
+      isLoading: true
     }
     this.flipCellsAround = this.flipCellsAround.bind(this);
     this.playAgain = this.playAgain.bind(this);
@@ -108,9 +109,21 @@ class Board extends Component {
   componentDidMount() {
     this.handleRandomMoves();
     //this.setState({hasWon: true}); 
+    this.setState({isLoading:false})
   }
 
   render() {
+
+    if (this.state.isLoading) {
+      return (
+          <div>
+            <h1>Loading...</h1>
+          </div>
+        );      
+
+    }
+
+
     if (this.state.hasWon){
       return (
         <div>
@@ -182,6 +195,7 @@ class Board extends Component {
       );
     
   }
+  
 }
 
 
