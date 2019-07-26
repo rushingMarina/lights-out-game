@@ -1,13 +1,13 @@
 {
-  "main.css": "/lights-out-game/static/css/main.66b1450c.chunk.css",
-  "main.js": "/lights-out-game/static/js/main.3f369f54.chunk.js",
-  "main.js.map": "/lights-out-game/static/js/main.3f369f54.chunk.js.map",
+  "main.css": "/lights-out-game/static/css/main.4a39e49c.chunk.css",
+  "main.js": "/lights-out-game/static/js/main.82171f07.chunk.js",
+  "main.js.map": "/lights-out-game/static/js/main.82171f07.chunk.js.map",
   "static/js/1.e614b0c7.chunk.js": "/lights-out-game/static/js/1.e614b0c7.chunk.js",
   "static/js/1.e614b0c7.chunk.js.map": "/lights-out-game/static/js/1.e614b0c7.chunk.js.map",
   "runtime~main.js": "/lights-out-game/static/js/runtime~main.c21eb99d.js",
   "runtime~main.js.map": "/lights-out-game/static/js/runtime~main.c21eb99d.js.map",
-  "static/css/main.66b1450c.chunk.css.map": "/lights-out-game/static/css/main.66b1450c.chunk.css.map",
+  "static/css/main.4a39e49c.chunk.css.map": "/lights-out-game/static/css/main.4a39e49c.chunk.css.map",
   "index.html": "/lights-out-game/index.html",
-  "precache-manifest.3954fc2369c8ceb2a1297c60bf115796.js": "/lights-out-game/precache-manifest.3954fc2369c8ceb2a1297c60bf115796.js",
+  "precache-manifest.b9fbf85c4abc031a469e8cfe1f47a552.js": "/lights-out-game/precache-manifest.b9fbf85c4abc031a469e8cfe1f47a552.js",
   "service-worker.js": "/lights-out-game/service-worker.js"
 }
