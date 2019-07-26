@@ -180,19 +180,45 @@ class Board extends Component {
       </div>
     }
 
-      return (
+      // return (
+      //   <div className='container'>
+      //     <div className='Board-title'>
+      //       <div className="neon-blue">Lights </div>
+      //       <div className="neon-pink"> Out</div>
+      //     </div>
+      //       { !this.state.gaveUp ? (<table className="Board"><tbody>{table}</tbody></table>): null }
+      //   <div className='container'>
+      //       {rulesBtn}
+      //       {giveUpBtn}
+      //   </div>
+      //   </div>
+      // );
+      
+     return (
         <div className='container'>
-          <div className='Board-title'>
-            <div className="neon-blue">Lights </div>
-            <div className="neon-pink"> Out</div>
-          </div>
-            { !this.state.gaveUp ? (<table className="Board"><tbody>{table}</tbody></table>): null }
-        <div className='container'>
-            {rulesBtn}
-            {giveUpBtn}
+            { !this.state.gaveUp ? (<div>
+              <div className='Board-title'>
+                <div className="neon-blue">Lights </div>
+                <div className="neon-pink"> Out</div>
+              </div>              
+              <table className="Board"><tbody>{table}</tbody></table>
+              <div className='container'>
+                  {rulesBtn}
+                  {giveUpBtn}
+              </div>
+              </div>): 
+               <div className='contsiner'>
+               <div className='Board-title'>
+                 <div className="neon-blue">Lights </div>
+                 <div className="neon-pink"> Out</div>
+               </div>              
+               <div className='container'>
+                   {rulesBtn}
+                   {giveUpBtn}
+               </div>
+               </div>}
         </div>
-        </div>
-      );
+            );
     
   }
   

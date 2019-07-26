@@ -12,7 +12,7 @@
   align-content: center;
   justify-content: center;
   margin: 1.3rem;
-  margin-top:auto;
+  margin-top: 5rem;
 }
 
 
@@ -167,6 +167,10 @@
     font-size: 1.3rem;
     width: 20rem;
    }
+
+   .Board-title {
+    margin-top: auto;
+  }
 }
 
 /*Smaller devices (Porteait Phone & Smaller Devices) */
@@ -187,6 +191,9 @@
     font-size: 1.3rem;
     width: 20rem;
    }
+   .Board-title {
+    margin-top: auto;
+  }
 }
 
 /*Extra Smaller devices (Smaller Devices) */
@@ -207,6 +214,9 @@
     font-size: 1.3rem;
     width: 20rem;
    }
+   .Board-title {
+    margin-top: auto;
+  }
   
 
 }
