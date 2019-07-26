@@ -11,3 +11,38 @@
 .Cell-lit {
   background-color: #BBFAC6;
 }
+
+
+/*Small devices (Portrait Tablets & Small Desktops) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .Cell {
+    height: 70px;
+    width: 70px;
+  }
+
+}
+/*Extra Small devices (Landscape Phones & Portrait Tabletes) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .Cell {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+/*Smaller devices (Porteait Phone & Smaller Devices) */
+@media (min-width: 321px) and (max-width: 480px) {
+  .Cell {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+/*Extra Smaller devices (Smaller Devices) */
+@media (min-width: 10px) and (max-width: 320px) {
+  .Cell {
+    height: 70px;
+    width: 70px;
+  }
+
+}

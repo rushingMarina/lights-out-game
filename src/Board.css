@@ -51,6 +51,7 @@
 .Board-btn:hover {
   cursor: pointer;
   background-color: #212121;
+  
 }
 
 @font-face {
@@ -116,3 +117,84 @@
     color: #8459ff;
   }
 }
+
+/*Medium devices (Landscape Tablets & Medium Laptops) >=992px*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .neon-blue {
+      font-size: 4rem;
+    }
+    .neon-pink {
+      font-size: 4rem;
+    }
+}
+
+
+
+
+/*Small devices (Portrait Tablets & Small Desktops) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .neon-blue {
+    font-size: 4rem;
+  }
+  .neon-pink {
+    font-size: 4rem;
+  }
+  .Board-btn {
+    width: 16rem;
+    height: 3rem;
+    font-size: 1.5rem;
+
+  }
+
+}
+
+/*Extra Small devices (Landscape Phones & Portrait Tabletes) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .neon-blue {
+    font-size: 4rem;
+  }
+  .neon-pink {
+    font-size: 4rem;
+  }
+  .Board-btn {
+    width: 16rem;
+    height: 3rem;
+    font-size: 1.5rem;
+
+  }
+}
+
+/*Smaller devices (Porteait Phone & Smaller Devices) */
+@media (min-width: 321px) and (max-width: 480px) {
+  .neon-blue {
+    font-size: 3rem;
+  }
+  .neon-pink {
+    font-size: 3rem;
+  }
+  .Board-btn {
+    width: 16rem;
+    height: 3rem;
+    font-size: 1.5rem;
+
+  }
+}
+
+/*Extra Smaller devices (Smaller Devices) */
+@media (min-width: 10px) and (max-width: 320px) {
+  .neon-blue {
+    font-size: 3rem;
+  }
+  .neon-pink {
+    font-size: 3rem;
+  }
+  .Board-btn {
+    width: 16rem;
+    height: 3rem;
+    font-size: 1.5rem;
+
+  }
+	
+
+}
+
