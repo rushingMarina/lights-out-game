@@ -70,7 +70,7 @@
 .neon-pink {
   font-family: neon;
   color: #FB4264;
-  font-size: 5rem;
+  font-size: 4.5rem;
   /* line-height: 9vw; */
   text-shadow: 0 0 3vw #F40A35;
   animation: neon-ink 1s ease infinite;
@@ -81,7 +81,7 @@
 .neon-blue {
   font-family: neon;
   color: #426DFB;
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   text-shadow: 0 0 3vw #2356FF;
   animation: neon-blue 2s linear infinite;
   -moz-animation: neon-blue 2s linear infinite;
@@ -162,6 +162,11 @@
     font-size: 1.5rem;
 
   }
+
+  .Board-rules {
+    font-size: 1.3rem;
+    width: 20rem;
+   }
 }
 
 /*Smaller devices (Porteait Phone & Smaller Devices) */
@@ -178,6 +183,10 @@
     font-size: 1.5rem;
 
   }
+  .Board-rules {
+    font-size: 1.3rem;
+    width: 20rem;
+   }
 }
 
 /*Extra Smaller devices (Smaller Devices) */
@@ -194,7 +203,11 @@
     font-size: 1.5rem;
 
   }
-	
+  .Board-rules {
+    font-size: 1.3rem;
+    width: 20rem;
+   }
+  
 
 }
 

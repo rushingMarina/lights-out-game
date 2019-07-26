@@ -1,6 +1,6 @@
 .Cell {
-  height: 85px;
-  width: 85px;
+  height: 5rem;
+  width: 5rem;
   margin-top: 10px;
   background-color:#42354B;
   transition: background-color 0.7s ease;
@@ -25,24 +25,24 @@
 /*Extra Small devices (Landscape Phones & Portrait Tabletes) */
 @media (min-width: 481px) and (max-width: 767px) {
   .Cell {
-    height: 70px;
-    width: 70px;
+    height: 67px;
+    width: 67px;
   }
 }
 
 /*Smaller devices (Porteait Phone & Smaller Devices) */
 @media (min-width: 321px) and (max-width: 480px) {
   .Cell {
-    height: 70px;
-    width: 70px;
+    height: 67px;
+    width: 67px;
   }
 }
 
 /*Extra Smaller devices (Smaller Devices) */
 @media (min-width: 10px) and (max-width: 320px) {
   .Cell {
-    height: 70px;
-    width: 70px;
+    height: 67px;
+    width: 67px;
   }
 
 }
