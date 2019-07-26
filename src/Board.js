@@ -34,7 +34,7 @@ class Board extends Component {
 
   }
 
-  /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
+  /** creating a board nrows high/ncols wide */
   createBoard() {
     //length of board is now nrows!
     let board = new Array(this.props.nrows);
@@ -54,7 +54,7 @@ class Board extends Component {
     this.flipCellsAround(`${guess}-${guess_2}`);
   }
 
-  //when we radnomly doing a move we weill flip cells aroung it, this way the board will stay solvable
+  //when we radnomly doing a move we will flip cells aroung it, this way the board will stay solvable
   handleRandomMoves() {
     const numOfMoves = Math.floor(Math.random() * 5) + 3; // number of moves when game starts
     for (let i = 0; i < numOfMoves; i++) {
@@ -182,6 +182,7 @@ class Board extends Component {
 
      return (
         <div className='container'>
+          <div className='content'>
             { !this.state.gaveUp ? (<div>
               <div className='Board-title'>
                 <div className="neon-blue">Lights </div>
@@ -203,6 +204,8 @@ class Board extends Component {
                    {giveUpBtn}
                </div>
                </div>}
+              </div>
+               <footer className='footer'>made by <a target='blank' href='http://rushingmarina.com/portfolio/' className='rushing'>RushingMarina</a> 💻</footer>
         </div>
             );
     

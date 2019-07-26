@@ -15,6 +15,31 @@
   margin-top: 5rem;
 }
 
+/**************
+    FOOTER
+******************/
+
+.footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  font-family: "Roboto";
+  color: #84AE7F;
+
+}
+
+.rushing {
+  color: #8459ff;
+  text-decoration: none;
+}
+
+.rushing:hover {
+  cursor: pointer;
+}
+  
+
+
 
 .Board-rules {
  font-size: 1.3rem;
@@ -117,6 +142,8 @@
     color: #8459ff;
   }
 }
+
+
 
 /*Medium devices (Landscape Tablets & Medium Laptops) >=992px*/
 @media (min-width: 992px) and (max-width: 1199px) {
